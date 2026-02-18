@@ -35,7 +35,6 @@ class GitHubDocProvider(DocProvider):
             if e.response.status_code == 404:
                 raise NotFoundError(resource=path, repo=repo) from e  #
             if e.response.status_code == 403:
-                # Читаем заголовки GitHub для reset_time
                 reset = int(e.response.headers.get("X-RateLimit-Reset", 0))
                 raise RateLimitError(reset_time=reset) from e  #
             raise RepositoryError(f"Unexpected error: {e}", repo=repo)  #

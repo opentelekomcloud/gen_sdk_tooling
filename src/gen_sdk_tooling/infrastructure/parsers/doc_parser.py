@@ -30,8 +30,6 @@ class DocutilsParser(RstParser):
             path=uri_path,
             description=f"Source: {path}"
         )
-
-        # 4. В будущем здесь будет вызов приватных методов для парсинга таблиц:
         # endpoint.path_parameters = self._parse_table(doctree, "Path Parameters")
         # endpoint.request_body = self._parse_table(doctree, "Request Parameters")
 
